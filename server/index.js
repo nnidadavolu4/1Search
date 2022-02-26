@@ -35,6 +35,7 @@ require("chromedriver");
 //webscraping function
 async function scrape(searchString,type,size) {
     let sheinUrl = sheinCustomUrl(searchString,type,size);
+    let asosUrl = ASOSCustomUrl(searchString,type,size);
     customScrape(sheinUrl,"https://au.shein.com/pdsearch/",
                               "/html/body/div[1]/div[1]/div[2]/div[2]/section/div[1]/section[",
                               "]/div[1]/a/img[2]","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
@@ -43,7 +44,24 @@ async function scrape(searchString,type,size) {
                               "]/div[2]/div[2]/section/div[1]/div/span","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
                               "]/div[2]/div[2]/section/div[1]/div/span");
 
-    customScrape(searchString, "https://au.shein.com/pdsearch/", )
+    customScrape(asosUrl, "https://au.shein.com/pdsearch/", )
+
+
+
+
+
+
+
+  // convert JSON object to string
+  const data = JSON.stringify(catalog);
+
+  // write JSON string to a file
+  fs.writeFile("data.json", data, (err) => {
+    if (err) {
+      throw err;
+    }
+    console.log("JSON data is saved.");
+  });
                               
   }
 
@@ -82,19 +100,16 @@ async function sheinCustomUrl(searchTerm,type,size){
           }
           if(size<= 8){
             url += "?attr_values=Petite%20XS&attr_ids=87_1002064&exc_attr_id=87"
-          }elseif(size<= 10){
+          }else if(size<= 10){
             url += "?attr_values=Petite%20S&exc_attr_id=87&attr_ids=87_1002065"
-          }elseif(size<= 12){
+          }else if(size<= 12){
             url += "?attr_values=Petite%20M&exc_attr_id=87&attr_ids=87_1002066"
           }
             url += "?attr_values=Petite%20L&exc_attr_id=87&attr_ids=87_1002067"
         }else{
             url += "?attr_values=Petite%20M-Petite%20S-Petite%20XS-Petite%20L-Petite%20XXS&exc_attr_id=87&attr_ids=87_1002066-87_1002065-87_1002064-87_1002067-87_1002063"
         }
-        break:
-
-
-
+        break;
 
 /*
         https://au.shein.com/pdsearch/shirt/?attr_values=PetiteXS
@@ -106,29 +121,23 @@ async function sheinCustomUrl(searchTerm,type,size){
         https://au.shein.com/pdsearch/shirt/?attr_values=PetiteL
         }
 */
-
-
-        https://au.shein.com/plussize
-        
-
+        //https://au.shein.com/plussize
 
       case "plus":
-
         if(size != null){
-          if(size<= 16){
+          if(size<=14){
             url += "/?attr_values=0XL&exc_attr_id=87&attr_ids=87_1"
-          }elseif(size<= 16){
-            url += "attr_values=1XL&exc_attr_id=87&attr_ids=87_4"
-          }elseif(size<= 18){
+          }else if(size<= 16){
+            url += "/?attr_values=1XL&exc_attr_id=87&attr_ids=87_4"
+          }else if(size<= 18){
             url += "/?attr_values=2XL&exc_attr_id=87&attr_ids=87_13"
-        }elseif(size<= 20){
+        }else if(size<= 20){
             url += "/?attr_values=3XL&attr_ids=87_24&exc_attr_id=87"
         }
-
-      }else{
+      }else{ // size == null
             url += "?attr_values=0XL-1XL-2XL-3XL-4XL-5XL&attr_ids=87_1-87_4-87_13-87_24-87_32-87_35&exc_attr_id=87"
         }
-        break:
+        break;
         /*
         https://au.shein.com/pdsearch/shirt/?attr_values=1XL-2XL-3XL-4XL-5XL
 
@@ -157,24 +166,41 @@ async function sheinCustomUrl(searchTerm,type,size){
 
 */
       case "maternity":
-        url = "https://au.shein.com/pdsearch/maternity%20" + "maternity " + searchTerm;
+        url = "https://au.shein.com/pdsearch/maternity%20" + searchTerm;
 
         if(size != null){
           if(size<= 8){
               url += "/?attr_values=XXS&exc_attr_id=87&attr_ids=87_757"
-            }elseif(size<= 10){
+          }else if(size<= 10){
               url += "/?attr_values=S&exc_attr_id=87&attr_ids=87_568"
-          }elseif(size<= 12){
+          }else if(size<= 12){
             url += "/?attr_values=L&attr_ids=87_387&exc_attr_id=87"
-          }elseif(size<= 14){
+          }else if(size<= 14){
             url += "/?attr_values=0XL&exc_attr_id=87&attr_ids=87_1"
-          }elseif(size<= 16){
+          }else if(size<= 16){
             url += "attr_values=1XL&exc_attr_id=87&attr_ids=87_4"
-          }elseif(size<= 18){
+          }else if(size<= 18){
             url += "/?attr_values=2XL&exc_attr_id=87&attr_ids=87_13"
-        }elseif(size<= 20){
+          }else if(size<= 20){
             url += "/?attr_values=3XL&attr_ids=87_24&exc_attr_id=87"
+        }}
+        break;
+      default:
+        if(size != null){
+          if(size<= 8){
+              url += "/?attr_values=XXS&exc_attr_id=87&attr_ids=87_757"
+            }else if(size<= 10){
+              url += "/?attr_values=S&exc_attr_id=87&attr_ids=87_568"
+          }else if(size<= 12){
+            url += "/?attr_values=L&attr_ids=87_387&exc_attr_id=87"
+          }else if(size<= 14){
+            url += "/?attr_values=0XL&exc_attr_id=87&attr_ids=87_1"
+          }else if(size<= 16){
+            url += "attr_values=1XL&exc_attr_id=87&attr_ids=87_4"
+          }else if(size<= 18){
+            url += "/?attr_values=2XL&exc_attr_id=87&attr_ids=87_13"
         }
+
 
 
     }
@@ -183,18 +209,109 @@ async function sheinCustomUrl(searchTerm,type,size){
 
 }
 
+async function ASOSCustomUrl(searchTerm,type,size){
+  //Took out currentpricerange=5-410 since we get different
+  //For plus size: /?currentpricerange=5-690&q=shirt
+  let url = "https://www.asos.com/au/search/?q=" + searchTerm;
+    switch(type){
+      case "petite":
+        url += "&refine=attribute_10155:6403"
+        if(size != null){
+          //size == 6 && size == 5 maybe??
+          if(size<= 6){
+            url += "|size:91";
+          }  
+          else if(size<= 8){
+            url += "|size:103";
+          }
+          
+          else if(size<= 10){
+            url += "|size:19";
+          }else if(size<= 12){
+            url += "|size:31";
+          }else{
+            //Size > 12
+            url += "|size:149,43,55,67" //What about 22...32?
+          }
+        }else{
+          //size == null, select all petite, do nothing
+        }
+        break;
+
+      case "plus":
+        url += "&refine=attribute_10155:7699"
+        if(size != null){
+          if(size<= 16){
+            url += "|size:55"
+          }else if(size<= 18){
+            url += "|size:67"
+          }else if(size<= 20){
+            url += "|size:149"
+          }
+          //if size != null but >20?
+        }else{ //size == null
+            //do nothing
+        }
+        break;
+
+      case "maternity":
+        url += "&refine=attribute_10155:6400";
+        if(size != null){
+          if(size<= 8){
+            url += "|size:103"
+          }else if(size<= 10){
+            url += "|size:19"
+          }else if(size<= 12){
+            url += "|size:31"
+          }else if(size<= 14){
+            url += "|size:43"
+          }else if(size<= 16){
+            url += "|size:55"
+          }else if(size<= 18){
+            url += "|size:67"
+          }else if(size<= 20){
+            url += "|size:149"
+          }else if(size> 20){ //size 24
+            url += "|size:179,203"
+          }}
+        break;
+
+      default:
+        //size url are all the same, except take away the |
+        url += "&refine=";
+        if(size != null){
+          if(size<= 8){
+            url += "size:103"
+          }else if(size<= 10){
+            url += "size:19"
+          }else if(size<= 12){
+            url += "size:31"
+          }else if(size<= 14){
+            url += "size:43"
+          }else if(size<= 16){
+            url += "size:55"
+          }else if(size<= 18){
+            url += "size:67"
+          }else if(size<= 20){
+            url += "size:149"
+          }
+
+    }
+
+}
+}
 
 
 
-  async function customScrape(searchString,url,imgSrc1,imgSrc2,label1,label2,href1,href2,price1,price2){
+  async function customScrape(url,imgSrc1,imgSrc2,label1,label2,href1,href2,price1,price2){
     //wait for browser to open
   let driver = await new Builder()
   .forBrowser("chrome")
   .setChromeOptions(new chrome.Options().addArguments("--headless"))
   .build();
 
-//go to shein
-await driver.get(url + searchString);
+//go to website
+await driver.get(url);
 let catalog = [];
 for (let i = 0; i < 40; i++) {
 
@@ -238,10 +355,11 @@ for (let i = 0; i < 40; i++) {
   };
 }
 
+/*
 /html/body/main/div[2]/div/div/div[3]/ul/li[+ i +]/article/div[2]/h3/a
 /html/body/main/div[2]/div/div/div[3]/ul/li[+ i +]/article/div[2]/h3/a
 /html/body/main/div[2]/div/div/div[3]/ul/li[+ i +]/article/div[2]/h3/a
-
+*/
 
 //add new class atribute search term
 // add more terms 
@@ -254,14 +372,4 @@ for (let i = 0; i < 40; i++) {
 
 
 
-  // convert JSON object to string
-  const data = JSON.stringify(catalog);
-
-  // write JSON string to a file
-  fs.writeFile("data.json", data, (err) => {
-    if (err) {
-      throw err;
-    }
-    console.log("JSON data is saved.");
-  });
-}
+}}
