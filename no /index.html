@@ -1,0 +1,74 @@
+<html>
+  <head> </head>
+  <body id="body">
+    <h1>Item finder</h1>
+
+    <h4>Search for item</h4>
+    <input class="channel-input" type="text" placeholder="Search" />
+    <button type="submit" onclick="submitChannel()">submit</button>
+
+    <div class="container"></div>
+
+    <script>
+      fetch("../server/data.json")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          let i = 0;
+          for (const item in data) {
+            const img = newEl("img", { src: item.img });
+            var img1 = new Image();
+            img1.src = data[i].img;
+
+            const para = document.createElement("p");
+            const node = document.createTextNode(
+              data[i].name + "    " + data[i].price
+            );
+            const a = document.createElement("a");
+            const linkText = document.createTextNode(data[i].link);
+            para.appendChild(node);
+
+            a.appendChild(linkText);
+            a.title = "See more";
+            a.href = data[i].link;
+            document.body.appendChild(a);
+            a.appendChild(linkText);
+            document.getElementById("body").appendChild(img1);
+            i++;
+
+            const element = document.getElementById("body");
+            element.appendChild(para);
+          }
+        });
+
+      function submitChannel() {
+        const searchTerm = document.querySelector(".channel-input").value;
+        fetch("http://localhost:3000/items", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ searchTerm }),
+        });
+        fetch("./server/user.json")
+          .then((response) => {
+            return response.json();
+          })
+          .then((jsondata) => console.log(jsondata));
+      }
+
+      function newEl(type, attrs = {}) {
+        const el = document.createElement(type);
+        for (let attr in attrs) {
+          const value = attrs[attr];
+          if (attr == "innerText") el.innerText = value;
+          else el.setAttribute(attr, value);
+        }
+        return el;
+      }
+
+      loadCreators();
+    </script>
+    <style></style>
+  </body>
+</html>
