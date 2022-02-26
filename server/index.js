@@ -88,7 +88,7 @@ async function scrape(searchString) {
   const data = JSON.stringify(catalog);
 
   // write JSON string to a file
-  fs.writeFile("user.json", data, (err) => {
+  fs.writeFile("data.json", data, (err) => {
     if (err) {
       throw err;
     }
