@@ -42,7 +42,21 @@ async function scrape(searchString) {
                               "]/div[2]/div[1]/a","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
                               "]/div[2]/div[2]/section/div[1]/div/span","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
                               "]/div[2]/div[2]/section/div[1]/div/span");
+
+    customScrape(searchString, "https://au.shein.com/pdsearch/", )
+                              
   }
+
+
+
+/*
+  h and m
+  zara
+  forever new
+  myer
+  cotton on 
+*/
+
 /*
   https://www.asos.com/au/search/?q=shirt&refine=floor:1000
   /html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[1]/a/div[1]/img
@@ -57,11 +71,70 @@ async function scrape(searchString) {
       /html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[1]/a
       /html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[2]/a
 */
+
+async function SheinCustomUrl(searchTerm,type,size,color){
+  let url = "https://au.shein.com/pdsearch/" + searchTerm;
+    switch(type){
+      case "petite":
+        if(size != null){
+          if(size<= 8){
+            url += "/?attr_values=PetiteXS"
+          }elseif(size<= 10){
+            url += "/?attr_values=PetiteS"
+          }elseif(size<= 12){
+            url += "/?attr_values=PetiteM"
+          }
+            url += "/?attr_values=PetiteL"
+        }else{
+            url += "/?attr_values=PetiteM-PetiteS-PetiteXS-PetiteL-PetiteXXS"
+        }
+        break:
 /*
-async function SheinCustomUrl(type,size,color){
-    switch case
-}
+        https://au.shein.com/pdsearch/shirt/?attr_values=PetiteXS
+        9 10 small
+        https://au.shein.com/pdsearch/shirt/?attr_values=PetiteS
+        11 12 medium
+        https://au.shein.com/pdsearch/shirt/?attr_values=PetiteM
+        14 16 large
+        https://au.shein.com/pdsearch/shirt/?attr_values=PetiteL
+        }
 */
+
+
+        https://au.shein.com/plussize
+        
+
+
+      case "plus":
+        https://au.shein.com/pdsearch/shirt/?attr_values=XXXL
+
+        break:
+
+        16-18
+        XXL
+
+        18-20
+        XXXL
+
+        20-22
+        XXXXL
+
+        22+
+        XXXXXL
+
+
+      case "maternity":
+
+
+
+
+
+    }
+
+
+
+}
+
 
 
 
@@ -117,7 +190,9 @@ for (let i = 0; i < 40; i++) {
   };
 }
 
-
+/html/body/main/div[2]/div/div/div[3]/ul/li[+ i +]/article/div[2]/h3/a
+/html/body/main/div[2]/div/div/div[3]/ul/li[+ i +]/article/div[2]/h3/a
+/html/body/main/div[2]/div/div/div[3]/ul/li[+ i +]/article/div[2]/h3/a
 
 
 //add new class atribute search term
