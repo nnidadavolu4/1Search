@@ -36,7 +36,7 @@ require("chromedriver");
 async function scrape(searchString,type,size) {
     let sheinUrl = sheinCustomUrl(searchString,type,size);
     let asosUrl = ASOSCustomUrl(searchString,type,size);
-    customScrape(sheinUrl,"https://au.shein.com/pdsearch/",
+    customScrape(sheinUrl,
                               "/html/body/div[1]/div[1]/div[2]/div[2]/section/div[1]/section[",
                               "]/div[1]/a/img[2]","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
                               "]/div[2]/div[1]/a","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
@@ -44,13 +44,14 @@ async function scrape(searchString,type,size) {
                               "]/div[2]/div[2]/section/div[1]/div/span","//*[@id='product-list-v2']/div[2]/div[2]/section/div[1]/section[",
                               "]/div[2]/div[2]/section/div[1]/div/span");
 
-    customScrape(asosUrl, "https://au.shein.com/pdsearch/", )
-
-
-
-
-
-
+    customScrape(asosUrl,"/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[", 
+                              "]/a/div[1]/img", 
+                              "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[",
+                              "]/a/div[2]/div/div/h2", 
+                              "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[", 
+                              "]/a/p/span/span", 
+                              "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[", 
+                              "]/a");
 
   // convert JSON object to string
   const data = JSON.stringify(catalog);
