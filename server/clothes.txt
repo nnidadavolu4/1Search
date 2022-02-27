@@ -1,0 +1,124 @@
+apron
+aprons
+
+bikini
+bikinis
+blazer
+blazers
+blouse	
+blouses
+bump band
+bump bands
+
+cap
+cardigan
+cardigans
+coat	
+coats
+corset
+cloak
+cloaks
+camisole
+camis
+co-ord
+co-ords
+croptop
+crop top
+cover ups
+coverups
+
+dress	
+dresses
+dressing gown
+dressing gowns
+dungarees
+
+frock
+frocks
+fur coat
+fur coats
+
+gown
+gowns
+
+hat
+hats
+hotpants
+hoodie
+hoodies
+
+jacket
+jackets
+jeans
+jumper
+jumpers
+jeggins
+jumpsuit
+jumpsuits
+
+lingerie
+leggings
+loungewear
+
+nighties
+
+overalls
+
+pyjama
+pyjamas
+pants
+playsuit
+playsuits
+parka
+parkas
+poncho
+ponchos
+polo shirt
+polo shirts
+
+quilted jacket
+quilted jackets
+
+raincoat
+rain coat
+raincoats
+rain coats
+robe
+robes
+
+scarf
+scarves
+shorts
+shirt
+shirts
+skirt	
+skirts
+socks
+stockings
+suit
+suits
+sweater
+sweaters
+
+T-shirt
+t-shirt
+T-shirts
+t-shirts
+tank top
+tank tops
+tie
+ties
+trousers
+tights	
+
+uniform
+uniforms
+underwear
+
+vest
+vests
+
+waistcoat
+waistcoats
+wetsuit
+wetsuits
