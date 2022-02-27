@@ -32,7 +32,7 @@ FACEBOOK: https://www.facebook.com/themefisher
   
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <!-- Themefisher Icon font -->
   <link rel="stylesheet" href="plugins/themefisher-font/style.css">
   <!-- bootstrap.min css -->
@@ -51,13 +51,6 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 <body id="body">
 
-	<script>
-		function chosenValue() {
-		var mylist = document.getElementById("myList");
-		document.getElementById("favourite").value = mylist.options[mylist.selectedIndex].text;
-		}
-	</script>
-
 <!-- Start Top Header Bar -->
 <section class="top-header">
 	<div class="container">
@@ -73,13 +66,13 @@ FACEBOOK: https://www.facebook.com/themefisher
 				<div class="logo text-center">
 					<a href="index.html">
 						<!-- replace logo here -->
-						<svg width="200px" height="43px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+						<svg width="135px" height="29px" viewBox="0 0 155 29" version="1.1" xmlns="http://www.w3.org/2000/svg"
 							xmlns:xlink="http://www.w3.org/1999/xlink">
-							<g id="Page-1" s fill="none" font-size="42"
-								font-family="" font-weight="bold">
-								<g id="Group" transform="translate(-160.000000, -285.000000)" fill="#000000">
+							<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-size="40"
+								font-family="AustinBold, Austin" font-weight="bold">
+								<g id="Group" transform="translate(-108.000000, -297.000000)" fill="#000000">
 									<text id="AVIATO">
-										<tspan x="180.94" y="325" >1Search</tspan>
+										<tspan x="108.94" y="325">AVIATO</tspan>
 									</text>
 								</g>
 							</g>
@@ -138,7 +131,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 					</li><!-- / Cart -->
 
 					<!-- Search -->
-					<!-- <li class="dropdown search dropdown-slide">
+					<li class="dropdown search dropdown-slide">
 						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"><i
 								class="tf-ion-ios-search-strong"></i> Search</a>
 						<ul class="dropdown-menu search-dropdown">
@@ -146,7 +139,7 @@ FACEBOOK: https://www.facebook.com/themefisher
 								<form action="post"><input type="search" class="form-control" placeholder="Search..."></form>
 							</li>
 						</ul>
-					</li> -->
+					</li><!-- / Search -->
 
 					<!-- Languages -->
 					<li class="commonSelect">
@@ -185,42 +178,132 @@ FACEBOOK: https://www.facebook.com/themefisher
 			<div id="navbar" class="navbar-collapse collapse text-center">
 				<ul class="nav navbar-nav">
 
-					<li class="dropdown search dropdown-slide">
-						
+					<!-- Home -->
+					<li class="dropdown ">
+						<a href="index.html">Home</a>
+					</li><!-- / Home -->
 
-						<div class="search " style="padding: 10px 12px;">
-							<form action=" ">
-								<input style="height:35px; width:240px; font-size:14pt; border-radius:5px; border: 0px solid black;" type="text" placeholder="Search.." name="search" class="channel-input">
-								<li class="dropdown dropdown-slide">
-									<div> 
-										<select id = "myList" onchange = "chosenValue()" class = "size" style="height:35px; width:70px; opacity:0.7; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
-											<option selected disabled>Size</option>
-											<option value="6"> XS </option>
-											<option value="8"> S </option>
-											<option value="10"> M </option>
-											<option value="12"> L </option>
-											<option value="14"> XL </option>
-										</select>
-									</div>
-								</li>
-			
-								<li class="dropdown dropdown-slide">
-									<div> 
-										<select id = "myList" onchange = "chosenValue()" class = "type" style="height:35px; width:150px; opacity:0.7; margin-left:20px; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
-											<option selected disabled>Body Type</option>
-											<option value="plus"> Plus Size </option>
-											<option value="maternity"> Maternity</option>
-											<option value="petite"> Petite</option>
-											<!--<option value="sustainable"> Sustainable</option>-->
-										</select>
-									</div>
-								</li>
-								<button style="height:35px; width:40px; color: black; background: transparent; border: 0px solid grey;" type="submit" onclick="submitChannel()"><i class="fa fa-search"></i></button>
-							</form>
-						</div>
-					</li>
 
-				
+					<!-- Elements -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Shop <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<div class="row">
+
+								<!-- Basic -->
+								<div class="col-lg-6 col-md-6 mb-sm-3">
+									<ul>
+										<li class="dropdown-header">Pages</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="checkout.html">Checkout</a></li>
+										<li><a href="cart.html">Cart</a></li>
+										<li><a href="pricing.html">Pricing</a></li>
+										<li><a href="confirmation.html">Confirmation</a></li>
+
+									</ul>
+								</div>
+
+								<!-- Layout -->
+								<div class="col-lg-6 col-md-6 mb-sm-3">
+									<ul>
+										<li class="dropdown-header">Layout</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="product-single.html">Product Details</a></li>
+										<li><a href="shop-sidebar.html">Shop With Sidebar</a></li>
+
+									</ul>
+								</div>
+
+							</div><!-- / .row -->
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / Elements -->
+
+
+					<!-- Pages -->
+					<li class="dropdown full-width dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Pages <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<div class="dropdown-menu">
+							<div class="row">
+
+								<!-- Introduction -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Introduction</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="contact.html">Contact Us</a></li>
+										<li><a href="about.html">About Us</a></li>
+										<li><a href="404.html">404 Page</a></li>
+										<li><a href="coming-soon.html">Coming Soon</a></li>
+										<li><a href="faq.html">FAQ</a></li>
+									</ul>
+								</div>
+
+								<!-- Contact -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Dashboard</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="dashboard.html">User Interface</a></li>
+										<li><a href="order.html">Orders</a></li>
+										<li><a href="address.html">Address</a></li>
+										<li><a href="profile-details.html">Profile Details</a></li>
+									</ul>
+								</div>
+
+								<!-- Utility -->
+								<div class="col-sm-3 col-xs-12">
+									<ul>
+										<li class="dropdown-header">Utility</li>
+										<li role="separator" class="divider"></li>
+										<li><a href="login.html">Login Page</a></li>
+										<li><a href="signin.html">Signin Page</a></li>
+										<li><a href="forget-password.html">Forget Password</a></li>
+									</ul>
+								</div>
+
+								<!-- Mega Menu -->
+								<div class="col-sm-3 col-xs-12">
+									<a href="shop.html">
+										<img class="img-responsive" src="images/shop/header-img.jpg" alt="menu image" />
+									</a>
+								</div>
+							</div><!-- / .row -->
+						</div><!-- / .dropdown-menu -->
+					</li><!-- / Pages -->
+
+
+
+					<!-- Blog -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Blog <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+							<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+							<li><a href="blog-full-width.html">Blog Full Width</a></li>
+							<li><a href="blog-grid.html">Blog 2 Columns</a></li>
+							<li><a href="blog-single.html">Blog Single</a></li>
+						</ul>
+					</li><!-- / Blog -->
+
+					<!-- Shop -->
+					<li class="dropdown dropdown-slide">
+						<a href="#!" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="350"
+							role="button" aria-haspopup="true" aria-expanded="false">Elements <span
+								class="tf-ion-ios-arrow-down"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="typography.html">Typography</a></li>
+							<li><a href="buttons.html">Buttons</a></li>
+							<li><a href="alerts.html">Alerts</a></li>
+						</ul>
+					</li><!-- / Blog -->
+				</ul><!-- / .nav .navbar-nav -->
 
 			</div>
 			<!--/.navbar-collapse -->
@@ -228,104 +311,86 @@ FACEBOOK: https://www.facebook.com/themefisher
 	</nav>
 </section>
 
-
-<!-- <section class="product-category section">
+<section class="page-header">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="title text-center">
-					<h2>Product Category</h2>
+				<div class="content">
+					<h1 class="page-name">Dashboard</h1>
+					<ol class="breadcrumb">
+						<li><a href="index.html">Home</a></li>
+						<li class="active">my account</li>
+					</ol>
 				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box">
-					<a href="#!">
-						<img src="images/shop/category/category-1.jpg" alt="" />
-						<div class="content">
-							<h3>Clothes Sales</h3>
-							<p>Shop New Season Clothing</p>
-						</div>
-					</a>	
-				</div>
-				<div class="category-box">
-					<a href="#!">
-						<img src="images/shop/category/category-2.jpg" alt="" />
-						<div class="content">
-							<h3>Smart Casuals</h3>
-							<p>Get Wide Range Selection</p>
-						</div>
-					</a>	
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="category-box category-box-2">
-					<a href="#!">
-						<img src="images/shop/category/category-3.jpg" alt="" />
-						<div class="content">
-							<h3>Jewellery</h3>
-							<p>Special Design Comes First</p>
-						</div>
-					</a>	
-				</div>
-			</div>
-		</div>
-	</div>
-</section> -->
-
-<section class="products section bg-gray">
-	<div class="container">
-		<div class="row">
-			<div class="title text-center">
-				<h2>Trendy Products</h2>
-			</div>
-		</div>
-		<div id = products>
-			
-		</div>
-	</div>
-				
-</section>
-
-
-<!--
-Start Call To Action
-==================================== -->
-<section class="call-to-action bg-gray section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<div class="title">
-					<h2>SUBSCRIBE TO NEWSLETTER</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, <br> facilis numquam impedit ut sequi. Minus facilis vitae excepturi sit laboriosam.</p>
-				</div>
-				<div class="col-lg-6 col-md-offset-3">
-				    <div class="input-group subscription-form">
-				      <input type="text" class="form-control" placeholder="Enter Your Email Address">
-				      <span class="input-group-btn">
-				        <button class="btn btn-main" type="button">Subscribe Now!</button>
-				      </span>
-				    </div><!-- /input-group -->
-			  </div><!-- /.col-lg-6 -->
-
-			</div>
-		</div> 		<!-- End row -->
-	</div>   	<!-- End container -->
-</section>   <!-- End section -->
-
-<section class="section instagram-feed">
-	<div class="container">
-		<div class="row">
-			<div class="title">
-				<h2>View us on instagram</h2>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-12">
-				<div class="instagram-slider" id="instafeed" data-accessToken="IGQVJYeUk4YWNIY1h4OWZANeS1wRHZARdjJ5QmdueXN2RFR6NF9iYUtfcGp1NmpxZA3RTbnU1MXpDNVBHTzZAMOFlxcGlkVHBKdjhqSnUybERhNWdQSE5hVmtXT013MEhOQVJJRGJBRURn"></div>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+<section class="user-dashboard page-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="list-inline dashboard-menu text-center">
+					<li><a class="active" href="dashboard.html">Dashboard</a></li>
+					<li><a href="order.html">Orders</a></li>
+					<li><a href="address.html">Address</a></li>
+					<li><a href="profile-details.html">Profile Details</a></li>
+				</ul>
+				<div class="dashboard-wrapper user-dashboard">
+					<div class="media">
+						<div class="pull-left">
+							<img class="media-object user-img" src="images/avater.jpg" alt="Image">
+						</div>
+						<div class="media-body">
+							<h2 class="media-heading">Welcome Adam Smith</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, iure, est. Sit mollitia est maxime! Eos
+								cupiditate tempore, tempora omnis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, nihil. </p>
+						</div>
+					</div>
+					<div class="total-order mt-20">
+						<h4>Total Orders</h4>
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Order ID</th>
+										<th>Date</th>
+										<th>Items</th>
+										<th>Total Price</th>
+										<th></th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><a href="#!">#252125</a></td>
+										<td>Mar 25, 2016</td>
+										<td>2</td>
+										<td>$ 99.00</td>
+									</tr>
+									<tr>
+										<td><a href="#!">#252125</a></td>
+										<td>Mar 25, 2016</td>
+										<td>2</td>
+										<td>$ 99.00</td>
+									</tr>
+									<tr>
+										<td><a href="#!">#252125</a></td>
+										<td>Mar 25, 2016</td>
+										<td>2</td>
+										<td>$ 99.00</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 
 
 <footer class="footer section text-center">
@@ -405,5 +470,4 @@ Start Call To Action
 
 
   </body>
-  <script src="index.js"></script>
   </html>
