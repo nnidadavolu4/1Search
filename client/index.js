@@ -2,8 +2,8 @@ fetch("../server/data.json")
         .then((response) => response.json())
         .then((data) => {
           let i = 0;
+          
           for (const item in data) {
-
                 var e_0 = document.createElement("div");
                 e_0.setAttribute("class", "col-md-4");
                 var e_1 = document.createElement("div");
@@ -12,7 +12,7 @@ fetch("../server/data.json")
                 e_2.setAttribute("class", "product-thumb");
                 var e_3 = document.createElement("img");
                 e_3.setAttribute("class", "img-responsive");
-                e_3.setAttribute("src", item[i].img);
+                e_3.setAttribute("src", data[i].img);
                 e_3.setAttribute("alt", "product-img");
                 e_2.appendChild(e_3);
                 var e_4 = document.createElement("div");
@@ -50,25 +50,20 @@ fetch("../server/data.json")
                 e_15.setAttribute("class", "product-content");
                 var e_16 = document.createElement("h4");
                 var e_17 = document.createElement("a");
-                e_17.setAttribute("href", data[i].link);
-                e_17.appendChild(document.createTextNode(item[i].name));
+                e_17.setAttribute("href", "product-single.html");
+                e_17.appendChild(document.createTextNode(data[i].name));
                 e_16.appendChild(e_17);
                 e_15.appendChild(e_16);
                 var e_18 = document.createElement("p");
                 e_18.setAttribute("class", "price");
-                e_18.appendChild(document.createTextNode(item[i].price));
+                e_18.appendChild(document.createTextNode(data[i].price));
                 e_15.appendChild(e_18);
                 e_1.appendChild(e_15);
                 e_0.appendChild(e_1);
+                document.getElementById("products").appendChild(e_0);
                 i++;
             }
         });
-
-
-
-
-
-
 
       function submitChannel() {
         const searchTerm = document.querySelector(".channel-input").value;
