@@ -42,7 +42,7 @@ async function scrape(searchString) {
   //go to shein
   await driver.get(`https://au.shein.com/pdsearch/${searchString}/`);
   let catalog = [];
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 6; i++) {
 
     catalog[i] = {
       img: await driver
