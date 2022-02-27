@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
 //scrape when submit button is triggered
 app.post("/items", async (req, res) => {
   console.log(req.body);
-  const Data = await scrape(req.body.searchTerm);
+  const Data = await scrape(req.body.searchTerm, req.body.type, req.body.size);
 
   res.send("Data");
 });
@@ -32,7 +32,7 @@ require("chromedriver");
 
 
 //webscraping function
-async function scrape(searchString) {
+async function scrape(searchString,type,size) {
   //wait for browser to open
   let driver = await new Builder()
     .forBrowser("chrome")
@@ -40,7 +40,7 @@ async function scrape(searchString) {
     .build();
 
   //go to shein
-  await driver.get(`https://au.shein.com/pdsearch/${searchString}/`);
+  await driver.get(`https://au.shein.com/pdsearch/${searchString +" "+  type}/`);
   let catalog = [];
   for (let i = 0; i < 6; i++) {
 
