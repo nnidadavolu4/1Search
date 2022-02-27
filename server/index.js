@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
 //scrape when submit button is triggered
 app.post("/items", async (req, res) => {
   console.log(req.body);
-  const Data = await scrape(req.body.searchTerm, null, null);
+  const Data = await scrape(req.body.searchTerm, req.body.type, req.body.size);
 
   res.send("Data");
 });
@@ -48,29 +48,29 @@ async function scrape(searchString, type, size) {
     "]/div[2]/div[2]/section/div[1]/div/span"
   )
 */
-
+/*
   if(size == null){
   if(type == "maternity"){
-customScrape("https://www2.hm.com/en_au/search-results.html?q="+searchString+"+ladies+maternity",
+customScrape(type,size,"https://www2.hm.com/en_au/search-results.html?q="+searchString+"+ladies+maternity",
 "/html/body/main/div[3]/div/div[1]/ul/li[",
 "]/article/div[1]/a/img","/html/body/main/div[3]/div/div[1]/ul/li[",
 "]/article/div[2]/h3/a","/html/body/main/div[3]/div/div[1]/ul/li[",
 "]/article/div[2]/strong/span")
   } else if (type == "plus") {
-    customScrape("https://www2.hm.com/en_au/search-results.html?q="+searchString+"+ladies&department=1&sort=stock&sizes=381_3xl_1_womenswear&image-size=small&image=model&offset=0&page-size=40",
+    customScrape(type,size,"https://www2.hm.com/en_au/search-results.html?q="+searchString+"+ladies&department=1&sort=stock&sizes=381_3xl_1_womenswear&image-size=small&image=model&offset=0&page-size=40",
     "/html/body/main/div[3]/div/div[1]/ul/li[",
     "]/article/div[1]/a/img","/html/body/main/div[3]/div/div[1]/ul/li[",
     "]/article/div[2]/h3/a","/html/body/main/div[3]/div/div[1]/ul/li[",
     "]/article/div[2]/strong/span")
   }else if (type != "petite"){
-    customScrape("https://www2.hm.com/en_au/search-results.html?q="+searchString+"+ladies",
+    customScrape(type,size,"https://www2.hm.com/en_au/search-results.html?q="+searchString+"+ladies",
     "/html/body/main/div[3]/div/div[1]/ul/li[",
     "]/article/div[1]/a/img","/html/body/main/div[3]/div/div[1]/ul/li[",
     "]/article/div[2]/h3/a","/html/body/main/div[3]/div/div[1]/ul/li[",
     "]/article/div[2]/strong/span")
   }
 } 
-
+*/
     /*
 /html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[1]/div/div[1]/div[2]/div/a/ul/li[1]/div/img
 
@@ -88,21 +88,21 @@ customScrape("https://www2.hm.com/en_au/search-results.html?q="+searchString+"+l
 *///html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[1]/div/div[1]/div[2]/div/a/ul/li[1]/div/img
 /*
   if(type == "plus"){
-customScrape("https://www.forevernew.com.au/catalogsearch/result/?q="+searchString+"+curve",
+customScrape(type,size,"https://www.forevernew.com.au/catalogsearch/result/?q="+searchString+"+curve",
   "/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
   "]/div/div[1]/div[2]/div/a/ul/li[1]/div/img","/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
   "]/div/div[2]/div[2]/a","/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
   "]/div/div[2]/div[3]/div/span");
 
   }else if(type == "petite"){
-    customScrape("https://www.forevernew.com.au/catalogsearch/result/?q="+searchString+"+petite",
+    customScrape(type,size,"https://www.forevernew.com.au/catalogsearch/result/?q="+searchString+"+petite",
     "/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
     "]/div/div[1]/div[2]/div/a/ul/li[1]/div/img","/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
     "]/div/div[2]/div[2]/a","/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
     "]/div/div[2]/div[3]/div/span");
   
       }else if(type != "maternity"){
-        customScrape("https://www.forevernew.com.au/catalogsearch/result/?q="+searchString,
+        customScrape(type,size,"https://www.forevernew.com.au/catalogsearch/result/?q="+searchString,
         "/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
         "]/div/div[1]/div[2]/div/a/ul/li[1]/div/img","/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
         "]/div/div[2]/div[2]/a","/html/body/div[3]/main/div[2]/div/div[2]/div[4]/ul/li[",
@@ -120,14 +120,14 @@ customScrape("Myer",
 */
 /*
 if(type=="plus"){
-customScrape("https://cottonon.com/AU/co/?q="+searchString+"&prefn1=gender&prefv1=Women&prefn2=size&prefv2=20%20%2F%203XL",
+customScrape(type,size,"https://cottonon.com/AU/co/?q="+searchString+"&prefn1=gender&prefv1=Women&prefn2=size&prefv2=20%20%2F%203XL",
   "/html/body/div[3]/div[10]/div[5]/div[4]/ul/li[",
   "]/div/div[1]/a/img","/html/body/div[3]/div[10]/div[5]/div[4]/ul/li[",
   "]/div/div[4]/a","/html/body/div[3]/div[10]/div[5]/div[5]/ul/li[",
   "]/div/div[4]/a","/html/body/div[3]/div[10]/div[5]/div[5]/ul/li[",
   "]/div/div[5]/span[2]");
   }else if (type == null){
-    customScrape("https://cottonon.com/AU/co/?q="+searchString+"&prefn1=gender&prefv1=Women&start=0&sz=24",
+    customScrape(type,size,"https://cottonon.com/AU/co/?q="+searchString+"&prefn1=gender&prefv1=Women&start=0&sz=24",
   "/html/body/div[3]/div[10]/div[5]/div[4]/ul/li[",
   "]/div/div[1]/a/img","/html/body/div[3]/div[10]/div[5]/div[4]/ul/li[",
   "]/div/div[4]/a","/html/body/div[3]/div[10]/div[5]/div[4]/ul/li[",
@@ -137,25 +137,27 @@ customScrape("https://cottonon.com/AU/co/?q="+searchString+"&prefn1=gender&prefv
   //html/body/div[3]/div[10]/div[5]/div[4]/ul/li[1]/div/div[1]/a/img
 
 
-  }
+  
 
 
 
 
   //html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[1]/a/div[1]/img
-  /*
-  catalog += customScrape(
+  
+  customScrape(
+    type,
+    size,
     asosUrl,
+
     "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[",
     "]/a/div[1]/img",
     "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[",
-    "]/a/div[2]/div/div/h2",
+    "]/a",
     "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[",
-    "]/a/p/span/span",
-    "/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[",
-    "]/a"
+    "]/a/p/span/span"
   );
-
+  }
+/*
   // convert JSON object to string
   const data = JSON.stringify(catalog);
 
@@ -313,10 +315,10 @@ async function sheinCustomUrl(searchTerm, type, size) {
 async function ASOSCustomUrl(searchTerm, type, size) {
   //Took out currentpricerange=5-410 since we get different
   //For plus size: /?currentpricerange=5-690&q=shirt
-  let url = "https://www.asos.com/au/search/?q=" + searchTerm;
+  let url = "https://www.asos.com/au/search/?currentpricerange=5-690&q=" + searchTerm;
   switch (type) {
     case "petite":
-      url += "&refine=attribute_10155:6403";
+      url += "&refine=attribute_10155:6403|floor:1000";
       if (size != null) {
         //size == 6 && size == 5 maybe??
         if (size <= 6) {
@@ -337,7 +339,7 @@ async function ASOSCustomUrl(searchTerm, type, size) {
       break;
 
     case "plus":
-      url += "&refine=attribute_10155:7699";
+      url += "&refine=attribute_10155:7699|floor:1000";
       if (size != null) {
         if (size <= 16) {
           url += "|size:55";
@@ -354,7 +356,7 @@ async function ASOSCustomUrl(searchTerm, type, size) {
       break;
 
     case "maternity":
-      url += "&refine=attribute_10155:6400";
+      url += "&refine=attribute_10155:6400|floor:1000";
       if (size != null) {
         if (size <= 8) {
           url += "|size:103";
@@ -379,31 +381,33 @@ async function ASOSCustomUrl(searchTerm, type, size) {
 
     default:
       //size url are all the same, except take away the |
-      url += "&refine=";
+      url += "&refine=floor:1000";
       if (size != null) {
         if (size <= 8) {
-          url += "size:103";
+          url += "|size:103";
         } else if (size <= 10) {
-          url += "size:19";
+          url += "|size:19";
         } else if (size <= 12) {
-          url += "size:31";
+          url += "|size:31";
         } else if (size <= 14) {
-          url += "size:43";
+          url += "|size:43";
         } else if (size <= 16) {
-          url += "size:55";
+          url += "|size:55";
         } else if (size <= 18) {
-          url += "size:67";
+          url += "|size:67";
         } else if (size <= 20) {
-          url += "size:149";
+          url += "|size:149";
         }
-      } else {
-        url += "&refine=floor:1000";
       }
+      }  
+      return url;
   }
-  return url;
-}
+
+
 
 async function customScrape(
+  type,
+  size,
   url,
   imgSrc1,
   imgSrc2,
@@ -421,9 +425,11 @@ async function customScrape(
   //go to website
   await driver.get(url);
   let catalog = [];
-
+ 
   for (let i = 0; i < 4; i++) {
+    
     catalog[i] = {
+      
       img: await driver
         .findElement(By.xpath(imgSrc1 + (i + 1) + imgSrc2))
         .getAttribute("src"),
@@ -436,8 +442,17 @@ async function customScrape(
       price: await driver
         .findElement(By.xpath(price1 + (i + 1) + price2))
         .getText(),
+      type:type,
+      size:size
     };
+
+    if(catalog[i].name == ""){
+      catalog[i].name = await driver.findElement(By.xpath("/html/body/div[1]/div/main/div/div/div[3]/div/div[1]/section/article[9]/a/div[2]/div/div/h2")).getText()
+    }
   }
+
+
+  
   let originalData = fs.readFileSync("data.json", "utf-8");
 
   let newData = JSON.parse(originalData);
@@ -458,5 +473,5 @@ async function customScrape(
   //add new class atribute search term
   // add more terms
   // implement wait to add more items.
-  driver.close();
+
 }

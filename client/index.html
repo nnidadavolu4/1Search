@@ -190,44 +190,33 @@ FACEBOOK: https://www.facebook.com/themefisher
 
 						<div class="search " style="padding: 10px 12px;">
 							<form action=" ">
-								<input style="height:35px; width:240px; font-size:14pt; border-radius:5px; border: 0px solid black;" type="text" placeholder="Search.." name="search">
-								<button style="height:35px; width:40px; color: black; background: transparent; border: 0px solid grey;" type="submit" ><i class="fa fa-search"></i></button>
+								<input style="height:35px; width:240px; font-size:14pt; border-radius:5px; border: 0px solid black;" type="text" placeholder="Search.." name="search" class="channel-input">
+								<li class="dropdown dropdown-slide">
+									<div> 
+										<select id = "myList" onchange = "chosenValue()" class = "size" style="height:35px; width:70px; opacity:0.7; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
+											<option selected disabled>Size</option>
+											<option value="6"> XS </option>
+											<option value="8"> S </option>
+											<option value="10"> M </option>
+											<option value="12"> L </option>
+											<option value="14"> XL </option>
+										</select>
+									</div>
+								</li>
+			
+								<li class="dropdown dropdown-slide">
+									<div> 
+										<select id = "myList" onchange = "chosenValue()" class = "type" style="height:35px; width:150px; opacity:0.7; margin-left:20px; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
+											<option selected disabled>Body Type</option>
+											<option value="plus"> Plus Size </option>
+											<option value="maternity"> Maternity</option>
+											<option value="petite"> Petite</option>
+											<!--<option value="sustainable"> Sustainable</option>-->
+										</select>
+									</div>
+								</li>
+								<button style="height:35px; width:40px; color: black; background: transparent; border: 0px solid grey;" type="submit" onclick="submitChannel()"><i class="fa fa-search"></i></button>
 							</form>
-						</div>
-					</li>
-
-					<li class="dropdown dropdown-slide">
-						<div> 
-							<select id = "myList" onchange = "chosenValue()" style="height:35px; width:70px; opacity:0.7; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
-								<option selected disabled>Size</option>
-								<option value="xs">  </option>
-								<option value="s"> S</option>
-								<option value="m"> M </option>
-								<option value="l"> L </option>
-								<option value="xl"> XL </option>
-							</select>
-						</div>
-					</li>
-
-					<li class="dropdown dropdown-slide">
-						<div> 
-							<select id = "myList" onchange = "chosenValue()" style="height:35px; width:150px; opacity:0.7; margin-left:20px; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
-								<option selected disabled>Body Type</option>
-								<option value="plus-size"> Plus Size </option>
-								<option value="maternity"> Maternity</option>
-								<option value="petite"> Petite</option>
-								<option value="sustainable"> Sustainable</option>
-							</select>
-						</div>
-					</li>
-
-					<li class="dropdown dropdown-slide">
-						<div> 
-							<select id = "myList" onchange = "chosenValue()" style="height:35px; width:150px; opacity:0.7; margin-left:20px; margin-top:10px; font-size:14pt; border-radius:5px; border: 0px solid black;" >
-								<option selected disabled>Body Type</option>
-								<option value="plus-size"> Plus Size </option>
-								<option value="maternity"> Maternity</option>
-							</select>
 						</div>
 					</li>
 
@@ -239,41 +228,6 @@ FACEBOOK: https://www.facebook.com/themefisher
 	</nav>
 </section>
 
-<div class="hero-slider">
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/firstphoto.jpeg);" style="font-family: none !important">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-center">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1"></p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5" style="font-family: none !important"> 1Search fits all </h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/secondphoto.jpeg);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-left">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="slider-item th-fullpage hero-area" style="background-image: url(images/slider/thirdphoto.png);">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 text-right">
-          <p data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".1">PRODUCTS</p>
-          <h1 data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".5">The beauty of nature <br> is hidden in details.</h1>
-          <a data-duration-in=".3" data-animation-in="fadeInUp" data-delay-in=".8" class="btn" href="shop.html">Shop Now</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- <section class="product-category section">
 	<div class="container">
@@ -718,4 +672,5 @@ Start Call To Action
 
 
   </body>
+  <script src="index.js"></script>
   </html>
