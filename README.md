@@ -7,17 +7,25 @@
 How to use the product:  *IMPORTANT: Checkout jeff branch on GitHub.  
 
 **1.** Download all files from GitHub: https://github.com/nnidadavolu4/1Search.git
+
 **2.** Download Node.js and select the compaDble version: https://nodejs.org/en/download/
+
 **3.** Click on the downloaded file to install. The following screen will pop up:
 
 <img width="743" alt="Screen Shot 2022-03-21 at 5 16 20 pm" src="https://user-images.githubusercontent.com/99856161/159215717-323ca9ab-bdbe-4c0c-b249-d2c1a47f37aa.png">
 
 **4.** Continue with the installaDon wizard
+
 **5.** Make sure /usr/local/bin is in your $PATH.
+
 **6.** Open the server folder in the terminal and run the command: node install (windows) or npm install (mac)
+
 **7. **Use the Git command: git checkout jeff 
+
 **8. **Run index.js in the server file using the command: node index.js
+
 **9.** Find index.html and open on live server
+
 **10.** Enjoy!
 
 **Introduction to our project**
