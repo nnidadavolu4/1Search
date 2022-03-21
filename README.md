@@ -20,7 +20,7 @@ How to use the product:  *IMPORTANT: Checkout jeff branch on GitHub.
 
 **6.** Open the server folder in the terminal and run the command: node install (windows) or npm install (mac)
 
-**7. **Use the Git command: git checkout jeff 
+**7.** Use the Git command: git checkout jeff 
 
 **8. **Run index.js in the server file using the command: node index.js
 
