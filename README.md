@@ -69,6 +69,7 @@ Furthermore, we will be looking to integrate more brands into our system, and th
 
 **Here is our product in action!**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N-5nfedmRXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N-5nfedmRXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
 
 
