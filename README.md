@@ -22,7 +22,7 @@ How to use the product:  *IMPORTANT: Checkout jeff branch on GitHub.
 
 **7.** Use the Git command: git checkout jeff 
 
-**8. **Run index.js in the server file using the command: node index.js
+**8.** Run index.js in the server file using the command: node index.js
 
 **9.** Find index.html and open on live server
 
