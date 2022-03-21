@@ -67,9 +67,7 @@ This is due to the fact that different business have different protocols and met
 We will be looking to collaborate with the different brands and create a model which will ensure that the consumer can order all the products from our website, and the shipment from all brands are collected and processed together from a shipment facility.
 Furthermore, we will be looking to integrate more brands into our system, and thereby, scale rapidly.
 
-**Here is our product in action!**
+**Checkout out 1Search in action!**
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N-5nfedmRXs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-
+https://www.youtube.com/embed/N-5nfedmRXs
 
